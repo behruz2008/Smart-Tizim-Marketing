@@ -1,0 +1,28 @@
+{% load static %} 
+
+ <section class="section-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-12 text-center mx-auto">
+                            <h2 class="mb-5"><span style="color: rgb(135, 238, 151);">Smart-tizim</span> CRM va ERP Platformasi</h2>
+
+                        </div>
+                        {% for i in Xususiyat %}
+                        <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                            
+                            <div class="featured-block d-flex justify-content-center align-items-center">
+                                <a href="" class="d-block">
+                                    <img src="{{ i.rasm.url }}" class="featured-block-image img-fluid" alt="">
+                                    <img src="{{ i.image.url }}" alt="">
+
+                                    <p class="featured-block-text"> <strong>{{ i.nom }}</strong></p>
+                                </a>
+                            </div>
+                            
+                        </div>
+                        {% endfor %}
+                    
+                       
+                    </div>
+                </div>
+            </section>

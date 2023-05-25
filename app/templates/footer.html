@@ -1,0 +1,91 @@
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12 mb-4">
+                <img width="100%" height="100%" src="images/big_tizim.png" alt="">
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-12 mb-3">
+                <h5 style="text-align: center;" class="site-footer-title mb-3">Tezkor havolalar</h5>
+
+                <ul class="footer-menu">
+                    <li class="footer-menu-item"><a href="#" class="footer-menu-link">O'quv markaz uchun</a></li>
+
+                    <li class="footer-menu-item"><a href="#" class="footer-menu-link">Xususiy maktab uchun</a></li>
+
+                    <li class="footer-menu-item"><a href="#" class="footer-menu-link">Ishlab chiqarish uchun</a>
+                    </li>
+
+                    <li class="footer-menu-item"><a href="#" class="footer-menu-link">Sotuv korxona uchun</a></li>
+
+                    <!-- <li class="footer-menu-item"><a href="#" class="footer-menu-link">Partner with us</a></li> -->
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12 mx-auto">
+                <h5 class="site-footer-title mb-3">Bog'lanish</h5>
+
+                <p class="text-white d-flex mb-2">
+                    <i class="bi-telephone me-2"></i>
+
+                    <a href="tel:+98996671529" class="site-footer-link">
+                        +998 99 667 15 29
+                    </a>
+                </p>
+
+                <p class="text-white d-flex">
+                    <i class="bi-envelope me-2"></i>
+
+                    <a href="mailto:smarttizim2023@gmail.com" class="site-footer-link">
+                        smarttizim2023@gmail.com
+                    </a>
+                </p>
+
+                <p class="text-white d-flex mt-3">
+                    <i class="bi-geo-alt me-2"></i>
+                    Qashqadaryo 01.01.2023 O'zbekiston, Qarshi shahri
+                </p>
+
+                <!-- <a href="#" class="custom-btn btn mt-3">Get Direction</a> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="site-footer-bottom">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-md-7 col-12">
+                    <p class="copyright-text mb-0">Tashkil etildi: <a href="#">2023 yil</a></p>
+                </div>
+
+                <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
+                    {% for l in Link %}
+
+
+                        <ul class="social-icon">
+                            <li class="social-icon-item">
+                                <a href="{{ l.telegram }}" class="social-icon-link bi-telegram"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="" class="social-icon-link bi-facebook"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="{{ l.instagram }}" class="social-icon-link bi-instagram"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="{{ l.youtube }}" class="social-icon-link bi-youtube"></a>
+                            </li>
+                        </ul>
+
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,271 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Smart-tizim</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/templatemo-kind-heart-charity.css' %}" rel="stylesheet">
+
+    <link rel="icon" style="border-radius: 50%;" href="../static/images/big_tizim.png" type="image">
+    <!--
+
+TemplateMo 581 Kind Heart Charity
+
+https://templatemo.com/tm-581-kind-heart-charity
+
+-->
+
+</head>
+
+<body id="section_1">
+
+{% include 'header.html' %}
+{% include 'nav.html' %}
+{% block content %}
+    <main>
+
+        <section class="hero-section hero-section-full-height">
+            <div class="container-fluid">
+                <div class="row">
+
+
+                    <div class="col-lg-12 col-12 p-0">
+                        <div id="hero-slide" class="carousel carousel-fade slide" data-bs-ride="carousel">
+                            {% for x in Xizmat %}
+                                <div class="carousel-inner">
+
+                                    <div class="carousel-item active">
+                                        <img src=" {{ x.rasm1.url }}" class="carousel-image img-fluid" alt="...">
+                                    </div>
+
+
+                                    <div class="carousel-item">
+                                        <img src="{{ x.rasm2.url }}"
+                                             class="carousel-image img-fluid" alt="...">
+
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <img src="{{ x.rasm3.url }}"
+                                             class="carousel-image img-fluid" alt="...">
+
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <button class="carousel-control-prev" type="button" data-bs-target="#hero-slide"
+                                    data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+
+                            <button class="carousel-control-next" type="button" data-bs-target="#hero-slide"
+                                    data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        {% include 'xususiyat.html' %}
+
+        <section class="section-padding section-bg" id="section_2">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                        <img src="../static/images/smart-tizim_flayer.jpg" class="custom-text-box-image img-fluid"
+                             alt="">
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <div class="custom-text-box">
+                            {% for i in Jamoa %}
+                                <h2 class="mb-2">{{ i.nom }} haqida</h2>
+
+                                <h5 class="mb-3">{{ i.nom }}</h5>
+                                <p class="mb-0">{{ i.jamoa_haqida }}</p>
+
+                                </div>
+                            {% endfor %}
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="custom-text-box mb-lg-0">
+                                    <h5 class="mb-3">Tizimning xususiyatlari</h5>
+                                    Smart-tizim CRM va ERP Platformasi
+                                    <!-- <p>Sed leo nisl, posuere at molestie ac, suscipit auctor quis metus</p> -->
+
+                                    <ul class="custom-list mt-2">
+                                        {% for m in Malumot %}
+                                            <li class="custom-list-item d-flex">
+                                                <i class="bi-check custom-text-box-icon me-2"></i>{{ m.malumot }}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="custom-text-box d-flex flex-wrap d-lg-block mb-lg-0">
+                                    {% for s in Statistika %}
+                                        <div class="counter-thumb">
+                                            <div class="d-flex">
+                                                <b><span style="font-size: 30px;color: #5BC1AC;">
+                                                    {{ s.soni }}
+                                                </span></b>
+                                            </div>
+                                            <span class="counter-text">{{ s.nom }}</span>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="section-padding" id="section_3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-12 text-center mb-4">
+                        <h2>Tarif va Xizmatlar</h2>
+                    </div>
+                    {% for j in Tarif %}
+                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                            <div class="custom-block-wrap">
+                                <img src="{{ j.rasm.url }}" style="width: 100%; height: 300px !important;"
+                                     class="custom-block-image img-fluid" alt="">
+
+                                <div class="custom-block">
+                                    <div class="custom-block-body">
+                                        <h5 style="text-align: center;" class="mb-3">{{ j.nom }}</h5>
+
+                                        <ul class="custom-list mt-2">
+                                            <li class="custom-list-item d-flex">
+                                                <i class="bi-check custom-text-box-icon me-2"></i>
+                                                {{ j.malumot }}
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+                                    <a href="tel:+998907228873" class="custom-btn btn">Tekin sinab ko'rish uchun</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+
+            <section style="text-align: center;" class="contact-section section-padding" id="section_6">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-4 col-12 ms-auto mb-5 mb-lg-0">
+                            <div class="contact-info-wrap">
+                                <h2>Aloqaga chiqish</h2>
+
+                                <div class="contact-image-wrap d-flex flex-wrap">
+                                    <img src="images/avatar/pretty-blonde-woman-wearing-white-t-shirt.jpg"
+                                         class="img-fluid avatar-image" alt="">
+
+                                    <div class="d-flex flex-column justify-content-center ms-3">
+                                        <p class="mb-0">Clara Barton</p>
+                                        <p class="mb-0"><strong>HR & tizim Operatori</strong></p>
+                                    </div>
+                                </div>
+
+                                <div class="contact-info">
+                                    <h5 class="mb-3">Bog'lanish</h5>
+
+                                    <p class="d-flex mb-2">
+                                        <i class="bi-geo-alt me-2"></i>
+                                        Qashqadaryo viloyati, Qarshi shahar
+                                    </p>
+
+                                    <p class="d-flex mb-2">
+                                        <i class="bi-telephone me-2"></i>
+
+                                        <a href="tel:+998996671529">
+                                            +998 99 667 15 29
+                                        </a>
+                                    </p>
+
+                                    <p class="d-flex">
+                                        <i class="bi-envelope me-2"></i>
+
+                                        <a href="mailto:smarttizim2023@gmail.com">
+                                            smarttizim2023@gmail.com
+                                        </a>
+                                    </p>
+
+                                    <a href="#" class="custom-btn btn mt-3">Aloqaga chiqish</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 col-12 mx-auto">
+                            <form class="custom-form contact-form" action="#" method="post" role="form">
+                                <!-- <h2>Aloqa forma</h2> -->
+
+                                <p class="mb-4">yoki email pochtangizni yuboring
+                                    <a href="#">smarttizim2023@gmail.com</a>
+                                </p>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <input type="text" name="first-name" id="first-name" class="form-control"
+                                               placeholder="Azizbek" required>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <input type="text" name="last-name" id="last-name" class="form-control"
+                                               placeholder="G'ulomov" required>
+                                    </div>
+                                </div>
+
+                                <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control"
+                                       placeholder="azizgulomov@gmail.com" required>
+
+                                <textarea name="message" rows="5" class="form-control" id="message"
+                                          placeholder="Qanday xizmat yoki yordam istaysiz?"></textarea>
+
+                                <button type="submit" class="form-control">Yuborish</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+    </main>
+{% endblock content %}
+{% include 'footer.html' %}
+
+<!-- JAVASCRIPT FILES -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.sticky.js' %}"></script>
+<script src="{% static 'js/click-scroll.js' %}"></script>
+<script src="{% static 'js/counter.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+
+
+</body>
+
+</html>
